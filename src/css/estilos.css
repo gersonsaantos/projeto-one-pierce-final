@@ -1,0 +1,103 @@
+body  {
+    background-color: #000000; /*Cria a cor de fundo*/
+    overflow: hidden;/*Serve para tirar a rolagem da pagina*/
+}
+main::after{ /*Pseudo elementos, como se tivesse colocado um elmento extra no nosso csss */
+    content:"" ;
+    position: fixed; /*Deixa o elemento fixo na tela*/
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat; /*Gera o degrade da pagina*/
+
+}
+
+main .personagem { /*serve para criar os estilo especifico para o personagem*/
+    display: none; /*Display esconde a apresentação, ou seja esconde as omagens*/
+    height: 100vh; /*VH é uma unidade de medida que é a altura da tela do dispositivo em que a pessoa estar acessando, serve para ocupar 100% da altura da tela disponivel*/
+
+}
+
+main .personagem.selecionado{ /*Aqui estar selecionando o pernosagem Lufy pq tem duas class no mesmo elemento*/
+    display: block; /* Block seria mostrar, apresntar as imagens escondida pelo Didplay none*/
+}
+
+main .personagem .imagem {
+    width: 100%; /*Width (Largura)faz com que a imagem se encaixe no tamanho que ela tem no pc*/
+    height: 100%; /**Height (Altura)faz com que a imagem se encaixe no tamanho que ela tem no pc*/
+    object-fit: cover; /* serve para distorcer a imagem,vai manter as dimesoes corretas, vai fazer com ela cubra o elemento personagem*/
+}
+
+.conteudo{
+
+    position: absolute;/*Vai posicionar o texto em cima da imagem*/
+    top: 0;/* joga o texto para onde eu quiser*/
+    left: 120px; /* joga o texto para a direita da pagina*/
+   
+    display: flex; /*ele Separa o H1 Do p*/
+    flex-direction: column; /*expoem os elementos em coluna*/
+    justify-content: center; /*para alinhar o conteudo verticalmente, ao centro*/
+    min-height: 100vh; /*Dis que esse elemneto precisa de uma altura minima*/
+    max-width: 380px; /*Largura maxima*/
+    z-index: 1;/*Eixo Z, to dizendo que quero que esse conteudo fique por cima do degrade*/
+}
+
+.conteudo .nome-personagem{
+    color: #ffffff; /*Muda cor do texto*/
+    font-size: 48px; /*Aumenta o tamanho da fonte*/
+    font-family: "Secular One"; /*Muda a fonte, trazendo a fonte inportada la do html*/
+    font-weight: 400; /*é o peso da fonte*/
+    margin-bottom: 20px; /*Cria uma espçamento do h1 para o P*/
+}
+
+.conteudo .descricao{
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px; /*Muda a altura emtre as linhas*/
+}
+
+.conteudo .logo{
+    background-image: url("../imagens/one-piece-logo.png"); /*o ../ quer dizer que estamos voltando pastas, Serve para carregar a imagem do logo*/
+    background-size: cover; /*quero que ele cubra a area que tem para cobrir*/
+    height: 100px; /*Altura*/
+    width: 230px; /*Largura*/
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position:  fixed;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center; /*Serve para alinhar no centro*/
+    gap: 10px; /*Serve para da espaçamentos*/
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.botoes .botao{
+    border: none; /*tira as bordas*/
+    background-color: #000000;
+    cursor: pointer; /*SERVE para percber que é um intem clicavel*/
+    border-radius: 50%;
+
+}
+
+.botoes .botao img { /*Serve pq tem uma imagem dentro da função botã*/
+    border-radius: 50%; /*serve para deixar os objetos arrendodados*/
+    
+
+}
+
+.botoes .botao.selecionado{
+    transform: scale(1.2); /*serve para aumentar o botão quando o mouse estiver em cima*/
+    box-shadow: 0 0 10px #d9d9d9; /* serve para mudar a bora e a cor da borda*/
+
+}
